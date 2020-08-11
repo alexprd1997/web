@@ -121,7 +121,7 @@ app.get('/login', (req, res) => {
 
 app.get('/hasilkelas', (req, res) => {
   connection.query(
-    'SELECT * FROM mahasiswa a JOIN id b ON a.id_mahasiswa=b.id_mahasiswa JOIN kelas c ON b.id_kelas=c.id_kelas WHERE c.id_kelas= "+req.body.id_kelas"',
+    'SELECT * FROM mahasiswa a JOIN id b ON a.id_mahasiswa=b.id_mahasiswa JOIN kelas c ON b.id_kelas=c.id_kelas',
     (error, results) => {
       res.render('hasilkelas.ejs',{hasilkelas:results});
     }
@@ -135,6 +135,16 @@ app.get('/kelas', (req, res) => {
     'SELECT * FROM kelas',
     (error, results) => {
       res.render('kelas.ejs',{kelas:results});
+    }
+  )
+});
+
+app.get('/kelas_mahasiswa/:id_kelas', (req, res) => {
+  connection.query(
+    'SELECT * FROM mahasiswa a JOIN id b ON a.id_mahasiswa=b.id_mahasiswa JOIN kelas c ON b.id_kelas=c.id_kelas WHERE c.id_kelas= '+req.params.id_kelas,
+    (error, results) => {
+      //console.log(results)
+      res.render('kelas_mahasiswa.ejs',{result:results});
     }
   )
 });

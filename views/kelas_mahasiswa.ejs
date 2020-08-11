@@ -11,17 +11,14 @@
       <a href="/top" class="header-left">LIST</a>
     </header>
     <div class="container">
-      <div class="container-header">
-        <h1>Daftar Kelas</h1>
-      </div>
       <div class="index-table-wrapper">
         <div class="table-head">
-          <span class="id-column">ID</span>
-          <span class="id-column">Nama</span>
-          <span class="id-column">Kelas</span>
-        </div>
+            <span class="id-column">ID</span>
+            <span class="id-column">Nama</span>
+            <span class="id-column">Kelas</span>
+          </div>
         <ul class="table-body">
-          <% hasilkelas.forEach((hasil) => { %>
+          <% result.forEach((hasil) => { %>
             <li>
               <div class="item-data">
                 <span class="id-column"><%= hasil.nim %></span>
