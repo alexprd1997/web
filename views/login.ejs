@@ -4,11 +4,12 @@
 		<meta charset="utf-8">
 		<title>Login LIST</title>
         <link rel="stylesheet" href="/css/style.css">
-        <script src="/send_url.js"></script>
+		<script src="/send_url.js"></script>
 	</head>
 	<body>
 		<div class="login-form">
 			<h1>Login FORM</h1>
+			<h2><%= error %></h2>
 			<form action="auth" method="POST">
 				<input type="text" name="username" placeholder="Username" id="username"required>
 				<input type="password" name="password" placeholder="Password" id="password" required>
