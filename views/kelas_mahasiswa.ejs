@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>LIST</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style.css" />
     <script src="/send_url.js"></script>
   </head>
   <body>
@@ -11,21 +11,24 @@
       <a href="/top" class="header-left">LIST</a>
     </header>
     <div class="container">
+      <div class="container-header">
+        <h1>Mahasiswa di kelas <%= kelas %></h1>
+      </div>
       <div class="index-table-wrapper">
         <div class="table-head">
-            <span class="id-column">ID</span>
-            <span class="id-column">Nama</span>
-            <span class="id-column">Kelas</span>
-          </div>
+          <span class="id-column">ID</span>
+          <span class="id-column">Nama</span>
+          <span class="id-column">Kelas</span>
+        </div>
         <ul class="table-body">
           <% result.forEach((hasil) => { %>
-            <li>
-              <div class="item-data">
-                <span class="id-column"><%= hasil.nim %></span>
-                <span class="id-column"><%= hasil.nama %></span>
-                <span class="id-column"><%= hasil.kelas %></span>
-              </div>
-            </li>
+          <li>
+            <div class="item-data">
+              <span class="id-column"><%= hasil.nim %></span>
+              <span class="id-column"><%= hasil.nama %></span>
+              <span class="id-column"><%= hasil.kelas %></span>
+            </div>
+          </li>
           <% }) %>
         </ul>
       </div>
