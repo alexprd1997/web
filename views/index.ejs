@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>LIST</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/send_url.js"></script>
+  </head>
+  <body>
+    <header>
+      <a href="/top" class="header-left">LIST</a>
+      <a href="/kelas" class="header-right">Kelas</a>
+    </header>
+    <div class="container">
+      <div class="container-header">
+        <h1>Daftar Mahasiswa</h1>
+        <a href="/new" class="new-button">+ Tambahkan</a>
+      </div>
+      <div class="index-table-wrapper">
+        <div class="table-head">
+          <tr>
+          <th><span class="id-column">NIM</span></th>
+          <th><span>Nama</span></th>
+          </tr>
+        </div>
+        <ul class="table-body">
+          <% mahasiswa.forEach((id) => { %>
+            <li>
+              <div class="item-data">
+                <tr>
+                <span class="id-column"><%= id.nim %></span>
+                <span class="name-column"><%= id.nama %></span>
+              </tr>
+              </div>
+              <div class="item-menu">
+                <tr>
+                  <th>
+                <form action="/delete/<%= id.nim %>" method="post">
+                  <input type="submit" value="Hapus">
+                </form>
+                </th>
+                <th>
+                <a href="/edit/<%=id.nim %>">Edit</a>
+                </th>
+                </tr>
+              </div>
+            </li>
+          <% }) %>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

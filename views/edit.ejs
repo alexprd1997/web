@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>LIST</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/send_url.js"></script>
+  </head>
+  <body>
+    <header>
+      <a href="/index" class="header-left">LIST</a>
+    </header>
+    <div class="container">
+      <div class="container-header">
+        <h1>Edit Mahasiswa</h1>
+      </div>
+      <div class="item-form-wrapper">
+        <p class="form-label">Edit</p>
+        <form action="/update/<%= id.id_mahasiswa %>" method="post">
+          <input type="hidden" name="itemId" value="<%= id.id_mahasiswa %>">
+          <p>Nim anda?</p>
+          <input type="text" name="itemNim" value="<%= id.nim %>">
+          <p>Nama anda?</p>
+          <input type="text" name="itemName" value="<%= id.nama %>">
+          <input type="submit" value="Perbarui">
+        </form>
+      </div>
+      <a href="/index" class="cancel-button">Kembali</a>
+    </div>
+  </body>
+</html>

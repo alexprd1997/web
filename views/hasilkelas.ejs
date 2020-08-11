@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>LIST</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/send_url.js"></script>
+  </head>
+  <body>
+    <header>
+      <a href="/top" class="header-left">LIST</a>
+    </header>
+    <div class="container">
+      <div class="container-header">
+        <h1>Daftar Kelas</h1>
+      </div>
+      <div class="index-table-wrapper">
+        <div class="table-head">
+            <tr>
+          <td><span class="id-column">Nim</span></td>
+          <td><span>Nama</span></td>
+          <td></td><span>Kelas</span></tr>
+          </tr>
+        </div>
+        <ul class="table-body">
+          <% hasilkelas.forEach((hasil) => { %>
+            <li>
+              <div class="item-data">
+                <span class="id-column"><%= hasil.nim %></span>
+                <span class="name-column"><%= hasil.nama %></span>
+                <span class="class-column"><%= hasil.kelas %></span>
+              </div>
+            </li>
+          <% }) %>
+        </ul>
+      </div>
+      <a href="/kelas" class="cancel-button">Kembali</a>
+    </div>
+  </body>
+</html>

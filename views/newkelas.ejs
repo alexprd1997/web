@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>LIST</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/send_url.js"></script>
+  </head>
+  <body>
+    <header>
+      <a href="/top" class="header-left">LIST</a>
+    </header>
+    <div class="container">
+      <div class="container-header">
+        <h1>Penambahan Kelas</h1>
+      </div>
+
+      <div class="item-form-wrapper">
+        <p class="form-label">INPUT</p>
+        <form action="/createkelas" method="post">
+          <p>ID kelas?</p>
+          <input type="text" name="itemId">
+          <p>Nama Kelas?</p>
+          <input type="text" name="itemKelas">
+          <input type="submit" value="Tambahkan">
+        </form>
+      </div>
+      <a href="/kelas" class="cancel-button">Kembali</a>
+    </div>
+  </body>
+</html>
