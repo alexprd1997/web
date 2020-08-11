@@ -82,7 +82,7 @@ app.post('/auth',  function(request, response) {
 	var username = request.body.username;
 	var password = request.body.password;
 	if (username && password) {
-    connection.query('SELECT * FROM admin WHERE username = ? AND password = ?', 
+    connection.query('SELECT * FROM user WHERE username = ? AND password = ?', 
     [username, password],  function(error, results, fields) {
 			if (results.length > 0) {
 				request.session.loggedin = true;
@@ -112,9 +112,9 @@ app.get('/top',(request, response) =>
 
 app.get('/login', (req, res) => {
   connection.query(
-    'SELECT * FROM admin',
+    'SELECT * FROM user',
     (error, results) => {
-      res.render('login.ejs',{admin:results});
+      res.render('login.ejs',{user:results});
     }
   )
 });
