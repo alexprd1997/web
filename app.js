@@ -109,14 +109,16 @@ app.post("/auth", function (request, response) {
 
 app.get("/top", (request, response) => {
   //console.log(request.session.user[0].username);
+  request.session.user[0].type === 1
+
   if (request.session.loggedin) {
     request.session.user[0].type === 1
-      ? response.render("admin.ejs")
+      ? response.render("top.ejs")
       : request.session.user[0].type === 2
-      ? response.render("dosen.ejs")
+      ? response.render("top.ejs")
       : request.session.user[0].type === 3
-      ? response.render("mhs.ejs")
-      : response.render("notfound.ejs");
+      ? response.render("top.ejs")
+      : response.render("login.ejs");
     //response.render('top.ejs');
   } else {
     response.render("login.ejs");
@@ -140,7 +142,7 @@ app.get("/hasilkelas", (req, res) => {
 });
 
 app.get("/kelas", (request, res) => {
-  request.session.user[0].type === 1 || request.session.user[0].type === 2 
+  request.session.user[0].type === 1
   ?
   connection.query("SELECT * FROM kelas", (error, results) => {
     res.render("kelas.ejs", { kelas: results });

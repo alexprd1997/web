@@ -133,13 +133,13 @@ input {
 
 /* header ================================ */
 header {
-  height: 56px;
-  background-color: #ffffff;
+  height: 50px;
+  background-color: #fcfcfd;
   border-bottom: 1px solid #f0f4f9;
 }
 
 .header-left {
-  margin-left: 56px;
+  margin-left: 50px;
   font-weight: 600;
   font-size: 20px;
   line-height: 56px;
@@ -147,10 +147,10 @@ header {
   display: inline;
 }
 .header-right{
-  margin-left: 56px;
+  margin-left: 25%;
   font-weight: 600;
   font-size: 20px;
-  line-height: 56px;
+  line-height: 50px;
   color: #6c7686;
   display: inline;
 }
@@ -256,6 +256,7 @@ header {
 .table-body .id-column {
   font-size: 16px;
   color: #bac6d3;
+  
 }
 
 .table-body .name-column {
@@ -278,10 +279,11 @@ header {
 
 .item-menu {
   display: flex;
+  width: 35%;
 }
 
 .item-menu form {
-  width: 60px;
+  width: 80px;
   text-align: center;
 }
 
@@ -304,10 +306,10 @@ header {
 }
 
 .item-menu a {
-  width: 60px;
+  width: 50px;
   font-size: 14px;
   color: #bac6d3;
-  text-align: center;
+  
   line-height: 28px;
 }
 
@@ -373,6 +375,12 @@ header {
 .login-form h1 {
   text-align: center;
   color: #4d4d4d;
+  font-size: 24px;
+  padding: 20px 0 20px 0;
+}
+.login-form h2 {
+  text-align: center;
+  color: red;
   font-size: 24px;
   padding: 20px 0 20px 0;
 }
