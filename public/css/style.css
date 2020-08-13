@@ -14,6 +14,13 @@ body {
   margin: 0;
   background-color: #f6faff;
   color: #6c7686;
+  animation-name: example;
+    animation-duration: 7s;
+    
+}
+@keyframes example {
+  from {background-color: #f6faff;}
+  to {background-color:rgb(243, 221, 221)}
 }
 
 ul, li {
@@ -50,8 +57,10 @@ input {
 
 /* top ================================ */
 .top-wrapper {
-  max-width: 1200px;
-  min-width: 920px;
+  max-width: 100%;
+  min-width: 100%;
+  max-height: 100%;
+  min-height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -129,37 +138,74 @@ input {
 
 .top-image img {
   width: 50%;
+  height: 50%;
+  margin-top: 25px;
 }
 
 /* header ================================ */
 header {
   height: 50px;
-  background-color: #fcfcfd;
-  border-bottom: 1px solid #f0f4f9;
+  width: 100%;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  position: fixed;
+  animation-name: example;
+  animation-duration: 2s;
 }
 
 .header-left {
   margin-left: 50px;
   font-weight: 600;
   font-size: 20px;
-  line-height: 56px;
-  color: #6c7686;
-  display: inline;
-}
-.header-right{
-  margin-left: 25%;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 50px;
   color: #6c7686;
   display: inline;
 }
 
+.header-left{float: left;}
+
+.header-left h1 {
+  margin-left: 50px;
+  color: #6c7686;
+}
+.header-right{
+  margin-left: 50px;
+  font-weight: 600;
+  font-size: 20px;
+  color: #6c7686;
+  display: inline;
+}
+.header-right{
+  float: right;
+}
+
+
 .header-left:hover {
-  color: #58d2b2;
+  color: #ffffff;
 }
 .header-right:hover{
-  color: #58d2b2;
+  color: #ffffff;
+}
+.header-right li {
+  margin-right: 50px;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.header-right a {
+  color:  #6c7686;
+}
+
+.header-right ul li a{
+  list-style: none;
+  text-decoration: none;
+}
+.header-right ul{
+  display: flex;
+  list-style: none;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 /* container ================================ */
@@ -342,6 +388,18 @@ header {
   color: #2b546a;
   font-size: 12px;
 }
+.item-form-wrapper input[type="password"] {
+  width: 100%;
+  height: 40px;
+  margin-top: 8px;
+  padding: 12px 16px;
+  background-color: #fcfcfd;
+  border: 1px solid #bac6d3;
+  border-radius: 2px;
+  color: #2b546a;
+  font-size: 12px;
+}
+
 
 .item-form-wrapper input[type="submit"] {
   display: block;
@@ -407,4 +465,9 @@ header {
   width: 120px;
   height: 50px;
 
+}
+
+.login-form .new-button{
+  text-align: center;
+  font-size: medium;
 }

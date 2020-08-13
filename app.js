@@ -94,7 +94,7 @@ app.post("/auth", function (request, response) {
           response.redirect("/top");
         } else {
           //request.session.error = "user atau password salah"
-          response.render("login.ejs", { error: "user atau password salah" });
+          response.render("login.ejs", { error: "Gagal Login" });
         }
         response.end();
       }
@@ -132,6 +132,22 @@ app.get("/login", (req, res) => {
   });
 });
 
+app.get("/newlogin", (req, res) => {
+  res.render("newlogin.ejs");
+});
+
+app.post("/createlogin", (req, res) => {
+  connection.query(
+    "INSERT INTO user SET ?",
+    { user: req.body.itemUser, password: req.body.itemPassword, type: req.body.itemType},
+    (error, results) => {
+      res.redirect("/login");
+    }
+  );
+});
+
+
+
 app.get("/hasilkelas", (req, res) => {
   connection.query(
     "SELECT * FROM mahasiswa a JOIN id b ON a.id_mahasiswa=b.id_mahasiswa JOIN kelas c ON b.id_kelas=c.id_kelas",
@@ -142,7 +158,7 @@ app.get("/hasilkelas", (req, res) => {
 });
 
 app.get("/kelas", (request, res) => {
-  request.session.user[0].type === 1
+  request.session.user[0].type === 1 
   ?
   connection.query("SELECT * FROM kelas", (error, results) => {
     res.render("kelas.ejs", { kelas: results });
